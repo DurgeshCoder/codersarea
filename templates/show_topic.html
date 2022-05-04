@@ -1,0 +1,316 @@
+{%extends 'base.html' %} {%block title %} {{topic.title}} - CodersArea
+{%endblock %} {%block pageDescription %} {{topic.description}} {%endblock %}
+{%block pageKeywords %} {{topic.keyword}} {%endblock %} {%block content %}
+{%load static %}
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <!--    <a href="#">About</a>-->
+  <!--    <a href="#">Services</a>-->
+  <!--    <a href="#">Clients</a>-->
+  <!--    <a href="#">Contact</a>-->
+  <div
+    class="accordion"
+    id="accordionEx1"
+    role="tablist"
+    aria-multiselectable="true"
+  >
+    {% for sub in sub_topics %}
+
+    <!-- Accordion card -->
+    <div class="panel-default">
+      <!-- Card header -->
+      <div class="card-header" role="tab" id="card-header1{{sub.pk}}">
+        <a
+          data-toggle="collapse"
+          onclick="rotateIcon('{{sub.pk}}')"
+          data-parent="#accordionEx1"
+          href="#collapse1{{sub.pk}}"
+          aria-expanded="true"
+          aria-controls="collapse1{{sub.pk}}"
+        >
+          <div class="mb-0 d-flex justify-content-between">
+            <span class="text-uppercase">{{sub.name}} </span>
+            <i class="fas fa-angle-down r-icon rotate-icon-{{sub.pk}} "></i>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card body -->
+      <div
+        id="collapse1{{sub.pk}}"
+        class="collapse show"
+        role="tabpanel"
+        aria-labelledby="card-header1{{sub.pk}}"
+        data-parent="#accordionEx1"
+      >
+        <div class="card-body p-0">
+          <div class="list-group">
+            {% for t in sub.get_topics %} {% if t.pk == topic.pk %}
+            <a
+              href="/{{technology.slug}}/{{t.slug}}"
+              class="list-group-item list-group-item-action active"
+            >
+              {{t.title}}</a
+            >
+
+            {%else%}
+            <a
+              href="/{{technology.slug}}/{{t.slug}}"
+              class="list-group-item list-group-item-action"
+            >
+              {{t.title}}</a
+            >
+            {%endif %} {%endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {%endfor %}
+  </div>
+</div>
+
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-md-3">
+      <!-- Use any element to open the sidenav -->
+      <span class="p-2 d-lg-none" onclick="openNav()"
+        ><img
+          src="{% static 'img/menu.svg' %}"
+          class="img-fluid"
+          style="width: 20px"
+          alt=""
+      /></span>
+
+      <div
+        class="accordion d-none d-lg-block"
+        id="accordionEx"
+        role="tablist"
+        aria-multiselectable="true"
+      >
+        {% for sub in sub_topics %}
+
+        <!-- Accordion card -->
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header" role="tab" id="card-header{{sub.pk}}">
+            <a
+              onclick="rotateIcon('{{sub.pk}}')"
+              data-toggle="collapse"
+              href="#collapse{{sub.pk}}"
+              aria-expanded="true"
+              aria-controls="collapse{{sub.pk}}"
+            >
+              <div class="mb-0 d-flex justify-content-between">
+                <span class="text-uppercase">{{sub.name}} </span>
+                <i class="fas fa-angle-down r-icon rotate-icon-{{sub.pk}} "></i>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card body -->
+          <div
+            id="collapse{{sub.pk}}"
+            class="collapse show"
+            role="tabpanel"
+            aria-labelledby="card-header{{sub.pk}}"
+          >
+            <div class="card-body p-0">
+              <div class="list-group">
+                {% for t in sub.get_topics %} {% if t.pk == topic.pk %}
+                <a
+                  href="/{{technology.slug}}/{{t.slug}}"
+                  class="list-group-item list-group-item-action active pl-5"
+                >
+                  {{t.title}}</a
+                >
+
+                {%else%}
+                <a
+                  href="/{{technology.slug}}/{{t.slug}}"
+                  class="list-group-item list-group-item-action pl-5"
+                >
+                  {{t.title}}</a
+                >
+                {%endif %} {%endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {%endfor %}
+      </div>
+    </div>
+
+    <div class="col-md-7 bg-white p-4 content">
+
+
+      <!-- ads -->
+  <!-- article ads middle 1 -->
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7974805835239751"
+     data-ad-slot="6173528129"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- end of ads -->
+
+<!-- topic  content-->
+
+      {{topic.content | safe}}
+
+
+      <!-- END of topic content -->
+        <!-- article ads middle 1 -->
+      <div>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client="ca-pub-7974805835239751"
+        data-ad-slot="6173528129"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    </div>
+    
+
+      <!-- next topic card -->
+      {% if next_topic %}
+      <div class="container-fluid p-0 m-0">
+        <div class="mt-3 border rounded">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-md-1 mr-3">
+                <i
+                  class="fas fa-arrow-alt-circle-right"
+                  style="font-size: 60px"
+                ></i>
+              </div>
+              <div class="col-md-10">
+                <h3>What Next ?</h3>
+                <a href="/{{technology.slug}}/{{next_topic.slug}}">
+                  <h4 class="text-primary">{{next_topic.title}}</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- next and previous button -->
+      <div class="container-fluid mt-3 text-center">
+        <a
+          class="btn bg btn-primary btn-sm"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="{{previous_topic.title}}"
+          href="/{{technology.slug}}/{{previous_topic.slug}}"
+          ><i class="fas fa-arrow-alt-circle-left"></i> Previous</a
+        >
+
+        {% if next_topic %}
+        <a
+          class="btn bg btn-primary btn-sm"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="{{next_topic.title}}"
+          href="/{{technology.slug}}/{{next_topic.slug}}"
+        >
+          Next <i class="fas fa-arrow-alt-circle-right"></i
+        ></a>
+        {% endif %}
+      </div>
+
+      <!-- topics recommend -->
+      <div class="container-fluid mt-3 mx-0">
+        <div class="list-group list-group-flush m-0 p-0">
+          <button
+            type="button"
+            class="list-group-item list-group-item-action active"
+          >
+            What are we going to learn in {{current_subtopic.name}}
+          </button>
+
+          {%for i in current_topics%}
+          <a
+            href="/{{technology.slug}}/{{i.slug}}"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+            >{{i.title}} <i class="fas fa-angle-double-right"></i
+          ></a>
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+    <!-- ads -->
+    <div>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- vertical ad 2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7974805835239751"
+     data-ad-slot="5407241360"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- end of the ads -->
+
+<!-- ads -->
+<div class="mt-2 sticky-top">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- vertical ad 2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7974805835239751"
+     data-ad-slot="5407241360"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<!-- end of the ads -->
+    </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready((e) => {
+    $("img").addClass("img-fluid mx-auto  m-3");
+    $("table").wrap('<div class="table-responsive"></div>');
+    $(".navbar")
+      .removeClass("background-none navbar-dark")
+      .addClass("bg navbar-light");
+  });
+
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "300px";
+  }
+
+  /* Set the width of the side navigation to 0 */
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+
+  function rotateIcon(id) {
+    $(".rotate-icon-" + id).toggleClass("rotate");
+  }
+</script>
+
+{%endblock %}

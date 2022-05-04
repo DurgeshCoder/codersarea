@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="{%block pageDescription %} {% endblock %}"
+    />
+    <meta name="keywords" content="{%block pageKeywords %} {%endblock %}" />
+    <meta name="author" content="John Doe" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <!-- Bootstrap core CSS -->
+    <!-- <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+      integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/prismcss.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}" />
+
+    <!-- JQuery -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <link rel="icon" href="{% static 'img/ca_logo.png' %}" type="image/png" />
+    <title>{%block title %} {%endblock %}</title>
+    <style type="text/css">
+      .r-icon {
+        transition: all 200ms linear;
+      }
+
+      .rotate {
+        transform: rotate(180deg);
+      }
+    </style>
+    <script data-ad-client="ca-pub-7974805835239751" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+   
+   
+    <!-- anlytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180383820-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-180383820-1');
+</script>
+
+   
+    <!--    ads blocker-->
+     <script type="text/javascript">
+      //block google ads on localhost
+      if (window.location.hostname === "127.0.0.1") {
+          window.adsbygoogle = {
+              enabled: true,
+              loaded: true,
+              push: function () {
+                  return;
+              },
+              google_ad_client: "",
+              enable_page_level_ads: true
+          }
+      }
+  </script>
+  </head>
+
+  <body>
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark background-none">
+      <div class="container">
+        <a class="navbar-brand font-weight-bold" href="/"> CodersArea </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto text-uppercase">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://learncodewithdurgesh.com/"
+                target="_blank"
+                >Video Courses <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/c/">C Language</a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/java/"
+                tabindex="-1"
+                aria-disabled="true"
+                >Java</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/python/"
+                tabindex="-1"
+                aria-disabled="true"
+                >Python
+              </a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ml-auto text-uppercase">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://www.facebook.com/learncodewithdurgesh"
+                tabindex="-1"
+                aria-disabled="true"
+                ><i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://instagram.com/durgesh_k_t"
+                tabindex="-1"
+                aria-disabled="true"
+                ><i class="fab fab fa-instagram"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://youtube.com/learncodewithdurgesh?sub_confirmation=1"
+                tabindex="-1"
+                aria-disabled="true"
+                ><i class="fab fa-youtube mr-2"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- end navbar -->
+
+    {%block content%} {%endblock%} {%include 'footer.html' %}
+
+    <div class="slide-up-container" style="display: none">
+      <img
+        id="arrow-up"
+        src="{% static '/img/up-arrow.png' %}"
+        class="img-fluid"
+        style="width: 50px"
+        alt=""
+      />
+    </div>
+
+    <!-- Bootstrap tooltips -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+    ></script>
+    <!-- MDB core JavaScript -->
+
+    <script src="{% static 'js/prismjs.js' %}"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+
+      $(document).ready((e) => {
+        // scroll down event
+        $(window).scroll(function () {
+          if ($(document).scrollTop() > 800) {
+            $(".slide-up-container").fadeIn();
+          } else {
+            $(".slide-up-container").fadeOut();
+          }
+        });
+
+        $("#arrow-up").on("click", function () {
+          $("html, body").animate({ scrollTop: 0 }, "slow", function () {});
+        });
+      });
+    </script>
+  </body>
+</html>

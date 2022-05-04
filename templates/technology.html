@@ -1,0 +1,68 @@
+{%extends 'base.html' %} {%block title %} {{tech.name}} Tutorial - CodersArea
+{%endblock %} {%block pageDescription %} {{tech.description}} {%endblock %}
+{%block pageKeywords %} Learn {{tech.name}}, {{tech.name}} , learn {{tech.name}}
+, best {{tech.name}} tutorial {%endblock %} {%block content %}
+
+<div class="banner-heading">
+  {%load static %}
+  <div class="container-fluid">
+    <div class="row my-3">
+      <div class="col-md-2">
+       <!-- ads -->
+      </div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body text-center">
+            <img
+              src="/media/{{tech.logo}}"
+              class="tech-logo-banner"
+              alt="{{tech.name}}"
+            />
+            <h1 class="text-center">{{tech.name}}</h1>
+            <p class="text-muted">{{tech.description}}</p>
+          </div>
+        </div>
+
+        <div class="card mt-3">
+          <div class="card-body">
+            <ul class="list-group bmd-list-group-sm">
+              {% for sub in tech.get_subtopics %}
+
+              <a href="#" class="list-group-item active">{{sub.name}}</a>
+
+              <ul class="list-group bmd-list-group-sm">
+                {% for t in sub.get_topics %}
+
+                <a
+                  href="/{{tech.slug}}/{{t.slug}}/"
+                  class="list-group-item ml-4"
+                >
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+
+                  {{t.title}}</a
+                >
+
+                {% endfor %}
+              </ul>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+       <!-- ads  -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(() => {
+    $(".navbar")
+      .removeClass("background-none navbar-dark")
+      .addClass("bg navbar-light");
+  });
+</script>
+
+{%endblock %}

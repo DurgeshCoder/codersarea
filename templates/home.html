@@ -1,0 +1,348 @@
+{%extends 'base.html' %} {%block title %} Home For Programmers - CodersArea
+{%endblock %} {%block pageDescription %} CodersArea is tutorial website which
+provide best tutorials for programmers and learners. CodersArea provides
+tutorials on different types of technologies like c , c++, java , python, java
+advance , hibernate , spring , spring boot , html ,css java script and much
+more. {%endblock %} {%block pageKeywords %} CodersArea , codersarea , coders area , codersarea.com,  best
+tutorial website , java tutorial , python tutorial , learn java , learn python ,
+learn c programming , c programming programs {%endblock %} {%block content %}
+{%load static %}
+<!--  banner -->
+
+<div class="banner d-flex justify-content-center align-items-center">
+  <div class="text-center text-white">
+    <img
+      src="{% static 'img/ca_logo.png'%}"
+      width="400"
+      class="img-fluid my-0 animate__animated animate__fadeInUp"
+      alt=""
+    />
+
+    <h1 class="text-white animate__animated animate__fadeInDown">
+      Home for Programmers
+    </h1>
+    <p class="animate__animated animate__fadeIn animate__delay-1s">
+      Learn Technology in very simple way..just join our community
+    </p>
+    <p class="animate__animated animate__fadeIn animate__delay-1s">
+      The most comprehensive tutorial for the Programming Languages. Loved by
+      over 50K+ users.
+    </p>
+    <button
+      class="btn custom-btn-bg animate__animated animate__fadeIn animate__delay-1s"
+      id="start-learning"
+    >
+      <i class="fas fa-graduation-cap mr-2"></i>
+      Start Learning
+    </button>
+  </div>
+</div>
+
+<!-- END Banner -->
+<!-- LearnCodeWith Durgesh Section -->
+
+<section style="margin-top: 92vh" class="section_light_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class=" ">
+          <div class="card-body text-center">
+            <img
+              src="https://yt3.ggpht.com/a/AATXAJzb0rIrvd0PnHv_M-RMXI_6V_1xqP_M6KSJMG0dzA=s176-c-k-c0x00ffffff-no-rj"
+              class="img-fluid rounded-circle"
+              alt=""
+            />
+            <h1 class="mt-4">LearnCodeWith Durgesh</h1>
+            <h2 class="text-primary">#FreeVideoCourses</h2>
+            <p>
+              Best Video Courses in HINDI, These courses are totally free of
+              cost. Thousands of people learn from these courses daily.
+            </p>
+            <p>
+              We explore not only the "what" but also the "why" and the "how" of
+              programming. And we encourage our visitors to think critically
+              about how technology is changing the way we work, live, and play.
+              Discover, Create, and Learn at the LearnCodeWith Durgesh. Have fun
+              exploring the past, present, and future of computer programming
+              through hands-on activities, while creatively solving problems and
+              making new friends. Get ready to be inspired. Get ready to change
+              the world. Our content and curriculum have obvious ties to
+              Science, Technology, and Engineering.
+            </p>
+            <p>
+              This Channel provide you a technical content like Java Programming
+              , Python Programming , C Programming , PHP Programing , Android
+              Development etc. Lean how to make software using
+              java,Python,android and other programming languages.
+            </p>
+            <a
+              href="https://www.youtube.com/learncodewithdurgesh?sub_confirmation=1"
+              class="btn custom-btn-bg animate__animated animate__fadeIn animate__delay-1s"
+            >
+              <i class="fas fa-graduation-cap mr-2"></i>
+              Check It</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--END LearnCodeWith Durgesh Section -->
+
+<!-- programming library section -->
+
+<section class="section_light_bg_2 my-4" id="lib">
+  <div class="container">
+    <h1 class="my-4 text-center">Our Programming Libarary</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div
+          class="card card-cascade card-bg hoverable wider reverse shodow pt-2 mt-2"
+        >
+          <!-- Avatar -->
+          <div class="avatar mx-auto white">
+            <img
+              src="{% static '/img/c.png' %}"
+              class="rounded-circle img-fluid"
+              style="width: 180px"
+              alt="C programming logo"
+            />
+          </div>
+
+          <!-- Card content -->
+          <div class="card-body card-body-cascade text-center">
+            <!-- Title -->
+            <h4 class="card-title my-0">
+              <strong>Learn C Programming</strong>
+            </h4>
+            <!-- Subtitle -->
+            <h6 class="font-weight-bold indigo-text py-2 text-primary">
+              #CProgramming
+            </h6>
+            <!-- Text -->
+            <p class="card-text">
+              C is mother of all Programing language so it is very neccesary to
+              learn C programming.
+            </p>
+
+            <!-- youtube btn -->
+            <a
+              href="/c/"
+              class="btn custom-btn-bg btn-sm border border-light rounded waves-effect waves-light"
+              target="_blank"
+            >
+              <i class="fa fa-book mr-2"></i>Start Learning
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+
+        <!-- c plus plus -->
+        <div
+          class="card card-cascade card-bg hoverable wider reverse shodow pt-2 mt-2"
+        >
+          <!-- Avatar -->
+          <div class="avatar mx-auto">
+            <img
+              src="{% static '/img/cpp.png' %}"
+              class="rounded-circle img-fluid"
+              style="width: 180px"
+              alt="C Plus Plus Programming"
+            />
+          </div>
+
+          <!-- Card content -->
+          <div class="card-body card-body-cascade text-center">
+            <!-- Title -->
+            <h4 class="card-title my-0"><strong>Learn C++ </strong></h4>
+            <!-- Subtitle -->
+            <h6 class="font-weight-bold indigo-text py-2 text-primary">
+              #C++
+            </h6>
+            <!-- Text -->
+            <p class="card-text">
+              C++ programming language was developed in 1980 by Bjarne Stroustrup at bell laboratorie, located in U.S.A .
+            </p>
+
+            <!-- youtube btn -->
+            <a
+              href="/cpp/"
+              class="btn custom-btn-bg btn-sm border border-light rounded waves-effect waves-light"
+              target="_blank"
+            >
+              <i class="fa fa-book mr-2"></i>Start Learning
+            </a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-4">
+        <!-- java language -->
+       <div
+          class="card card-cascade card-bg hoverable wider reverse shodow pt-2 mt-2"
+        >
+          <!-- Avatar -->
+          <div class="avatar mx-auto">
+            <img
+              src="{% static '/img/java.jpg' %}"
+              class="rounded-circle img-fluid"
+              style="width: 180px"
+              alt="C programming logo"
+            />
+          </div>
+
+          <!-- Card content -->
+          <div class="card-body card-body-cascade text-center">
+            <!-- Title -->
+            <h4 class="card-title my-0"><strong>Learn Java </strong></h4>
+            <!-- Subtitle -->
+            <h6 class="font-weight-bold indigo-text py-2 text-primary">
+              #Java
+            </h6>
+            <!-- Text -->
+            <p class="card-text">
+              Java is a powerful general-purpose programming language. It is
+              used to develop desktop and mobile applications, etc
+            </p>
+
+            <!-- youtube btn -->
+            <a
+              href="/java/"
+              class="btn custom-btn-bg btn-sm border border-light rounded waves-effect waves-light"
+              target="_blank"
+            >
+              <i class="fa fa-book mr-2"></i>Start Learning
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- second row -->
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <!-- python language -->
+        
+        <div
+        class="card card-cascade card-bg hoverable wider reverse shodow pt-2 mt-2"
+      >
+        <!-- Avatar -->
+        <div class="avatar mx-auto">
+          <img
+            src="{% static '/img/python.png' %}"
+            class="rounded-circle img-fluid"
+            style="max-width: 180px"
+            alt="C programming logo"
+          />
+        </div>
+
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center">
+          <!-- Title -->
+          <h4 class="card-title my-0"><strong>Learn Python </strong></h4>
+          <!-- Subtitle -->
+          <h6 class="font-weight-bold indigo-text py-2 text-primary">
+            #python
+          </h6>
+          <!-- Text -->
+          <p class="card-text">
+            Python is a popular programming language. It was created by Guido
+            van Rossum.
+          </p>
+
+          <!-- youtube btn -->
+          <a
+            href="/python/"
+            class="btn custom-btn-bg btn-sm border border-light rounded waves-effect waves-light"
+            target="_blank"
+          >
+            <i class="fa fa-book mr-2"></i>Start Learning
+          </a>
+        </div>
+      </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+</section>
+<!--#END programming library section -->
+
+<!-- why to learn programming section -->
+
+<section class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 pt-5 order-last order-md-first">
+        <h1 class="text-center">Why Programming ?</h1>
+        <div class="mx-4 mt-4">
+          <ul>
+            <li>Develop Problem-Solving and Logical Skill</li>
+            <li>Develop Interpersonal Skills</li>
+            <li>Coding is Creativity</li>
+            <li>Understanding of Both Sides of the Equation in Business</li>
+            <li>Empowering and Life-Changing Experience</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 order-first order-md-last">
+        <img
+          src="{% static  'img/element1.svg' %}"
+          class="img-fluid shadow-custom"
+          alt="elements"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- END why to learn programming section -->
+
+<!-- why CodersArea -->
+<section class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img
+          src="{% static  'img/element2.svg' %}"
+          class="img-fluid shadow-custom"
+          alt="elements"
+        />
+      </div>
+      <div class="col-md-6 mt-5 pt-5">
+        <h1 class="text-center">Why CodersArea ?</h1>
+        <div class="mx-5">
+          <ul>
+            <li>Best Programming Tutorial</li>
+            <li>Latest Tutorial on topics</li>
+            <li>Updated on regular intervals</li>
+            <li>For Beginners and Professionals</li>
+            <li>We listen to people ..mail us</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- END why coders area -->
+
+<script>
+  $(document).ready((e) => {
+    $("#start-learning").on("click", function () {
+      $("html, body").animate({
+        scrollTop: $("#lib").offset().top - 20,
+      });
+    });
+  });
+</script>
+
+{%endblock %}
